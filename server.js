@@ -1,10 +1,12 @@
 const express = require('express');  //importing express module
 const app = express() //creating an instance of express application
 const db = require('./db'); //importing database connection and operations
+require('dotenv').config(); // Load environment variables from .env file
+
 
 const bodyParser = require('body-parser'); // Importing body-parser middleware for parsing request bodies
 app.use(bodyParser.json()); // Use body-parser middleware to parse JSON request bodies
-
+const port = process.env.PORT || 3000; // Set the port number from environment variable or default to 3000
 
 // To handle GET request for the home page
 app.get('/', (req, res) => { 

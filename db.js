@@ -1,7 +1,11 @@
 const mongoose = require('mongoose'); // Importing Mongoose library for MongoDB interactions
+require('dotenv').config(); // Load environment variables from .env file
 
 // Define MongoDB connection URL
-const mongoURL = 'mongodb://localhost:27017/hotels'; // Replace with your MongoDB connection string
+// const mongoURL = 'mongodb://localhost:27017/hotels'; // Replace with your MongoDB connection string
+// const mongoURL = process.env.MONGODB_URL_LOCAL // Get MongoDB connection URL from environment variable
+const mongoURL = process.env.MONGODB_URL; // Get MongoDB connection URL from environment variable
+
 // Setup Connection to MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/hotels")
   .then(() => console.log("MongoDB Connected"))
