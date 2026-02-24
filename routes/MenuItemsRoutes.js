@@ -44,5 +44,5 @@ router.get('/category', async (req, res) => {
     }
 });
 
-
-module.exports = router;
+// comment added for testing purpose
+module.exports = router; // Exporting the router to be used in other parts of the application
